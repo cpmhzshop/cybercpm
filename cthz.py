@@ -98,7 +98,7 @@ def banner():
     print(Colorate.Horizontal(Colors.red_to_yellow,(versi)))
     text = "=" * 58
     print(Colorate.Horizontal(Colors.yellow_to_green,(text)))
-    print("< Wajib Logout Account CPM Sebelum Menggunakan Tools Ini >")
+    print("< Logout account before using >")
 
 def load_key_data(cpm):
     data = cpm.get_key_data()
@@ -141,31 +141,31 @@ if __name__ == "__main__":
         banner()
         text = "=" * 19 + "[ Login Account CPM ]" + "=" * 18
         print(Colorate.Horizontal(Colors.yellow_to_green,(text)))
-        acc_email = prompt_valid_value("  [?] Email Akun", "Email", password=False)
-        acc_password = prompt_valid_value("  [?] Kata Sandi Akun", "Kata Sandi", password=False)
-        acc_access_key = prompt_valid_value("  [?] Key Access", "Kunci Akses", password=False)
+        acc_email = prompt_valid_value("  [?] Email", "Email", password=False)
+        acc_password = prompt_valid_value("  [?] Password", "password", password=False)
+        acc_access_key = prompt_valid_value("  [?] Key Access", "access key", password=False)
         print(f"{Fore.CYAN}  [%] Mencoba Masuk. ", end=None)
         cpm = CyberCPM(acc_access_key)
         login_response = cpm.login(acc_email, acc_password)
         if login_response != 0:
             if login_response == 100:
-                print(f"{Fore.RED}  [X] AKUN TIDAK DITEMUKAN.")
+                print(f"{Fore.RED}  [X] Error.")
                 sleep(2)
                 continue
             elif login_response == 101:
-                print(f"{Fore.RED}  [X] KATA SANDI SALAH.")
+                print(f"{Fore.RED}  [X] Error.")
                 sleep(2)
                 continue
             elif login_response == 103:
-                print(f"{Fore.RED}  [X] KUNCI AKSES TIDAK VALID.")
+                print(f"{Fore.RED}  [X] Error.")
                 sleep(2)
                 continue
             else:
-                print(f"{Fore.RED}  [X] Email atau password tidak ditemukan.!")
+                print(f"{Fore.RED}  [X] Error.!")
                 sleep(2)
                 continue
         else:
-            print(f"{Fore.GREEN}  [✓] BERHASIL MASUK.")
+            print(f"{Fore.GREEN}  [✓] Successful.")
             sleep(2)
 
         while True:
