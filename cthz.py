@@ -144,7 +144,7 @@ if __name__ == "__main__":
         acc_email = prompt_valid_value("  [?] Email", "Email", password=False)
         acc_password = prompt_valid_value("  [?] Password", "password", password=False)
         acc_access_key = prompt_valid_value("  [?] Key Access", "access key", password=False)
-        print(f"{Fore.CYAN}  [%] Mencoba Masuk. ", end=None)
+        print(f"{Fore.CYAN}  [%] Loading. ", end=None)
         cpm = CyberCPM(acc_access_key)
         login_response = cpm.login(acc_email, acc_password)
         if login_response != 0:
