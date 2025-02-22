@@ -6,7 +6,7 @@ from time import sleep
 # Proprietary and confidential
 # Written by Lynx <DPR_LynX_Lovers>, 09, juli, 2024.
 
-BASE_URL: str = "https://cybercpm.store/api"
+BASE_URL: str = "https://cpmayan.squareweb.app/api"
 
 class CyberCPM:
 
